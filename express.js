@@ -33,7 +33,7 @@ module.exports = function(app, options) {
 		configuredHandlebars.partials = partials;
 	});
 
-	app.set('views', options.directory + '/views');
+	app.set('views', options.directory + (options.viewsDirectory || '/views'));
 
 	app.engine('.html', expressHandlebarsInstance.engine);
 
