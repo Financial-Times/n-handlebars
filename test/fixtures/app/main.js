@@ -2,20 +2,18 @@
 'use strict';
 
 var port = process.env.PORT || 3000;
-var express = require('../../../main');
+var express = require('express');
+var Handlebars = require('../../../express.js');
 var yell = require('./src/yell');
 
-var app = module.exports = express({
-	directory: __dirname,
-	helpers: { yell: yell }
-});
+var app = module.exports = express();
 
-app.get("/", function(req, res) {
-	res.send("Hello world");
-});
-
-app.get("/__flags.json", function(req, res) {
-	res.send(res.locals.flags);
+var handlebarsPromise = Handlebars(app, {
+	partialsDir: [
+		__dirname + '/views/partials'
+	],
+	helpers: {yell: yell},
+	directory: __dirname
 });
 
 app.get('/templated', function(req, res, next) {
@@ -37,22 +35,12 @@ app.get('/templated', function(req, res, next) {
 	});
 });
 
-app.get('/wrapped', function(req, res, next) {
-	res.render('main', {
-		layout: 'wrapper',
-		items: [1,2,3,4,5],
-		text : "<p>Paragraph 1</p><p>Paragraph 2</p><p>Paragraph 3</p>"
-	});
-});
+var actualAppListen = app.listen;
 
-app.get('/vanilla', function(req, res, next) {
-	res.render('main', {
-		layout: 'vanilla',
-		items: [1,2,3,4,5],
-		text : "<p>Paragraph 1</p><p>Paragraph 2</p><p>Paragraph 3</p>"
-	});
-});
+app.listen = function() {
+	var args = arguments;
 
-module.exports.listen = app.listen(port, function() {
-	console.log("Listening on " + port);
-});
+	return handlebarsPromise.then(function() {
+		actualAppListen.apply(app, args);
+	});
+};

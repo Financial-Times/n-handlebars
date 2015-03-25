@@ -4,31 +4,36 @@
 require('es6-promise').polyfill();
 
 var expressHandlebars = require('express-handlebars');
-var Handlebars = require('./handlebars');
+var handlebars = require('./handlebars');
+var extendHelpers = require('./src/extend-helpers');
 
 module.exports = function(app, options) {
 	options = options || {};
 
-	var handlebars = Handlebars(options.helpers);
+	var configuredHandlebars = handlebars({
+		helpers: options.helpers
+	});
+
+	var helpers = extendHelpers(options.helpers);
 
 	var expressHandlebarsInstance = new expressHandlebars.ExpressHandlebars({
 		// use a handlebars instance we have direct access to so we can expose partials
-		handlebars: handlebars,
+		handlebars: configuredHandlebars,
 		extname: '.html',
-		// helpers: helpers,
-		defaultLayout: false,
-		layoutsDir: __dirname + '/layouts',
+		helpers: helpers,
+		defaultLayout: options.defaultLayout || false,
+		layoutsDir: options.layoutsDir || undefined,
 		partialsDir: [
-			directory + '/bower_components'
-		]
+			options.directory + '/bower_components'
+		].concat(options.partialsDir || [])
 	});
 
 	// makes the usePartial helper possible
 	var exposePartials = expressHandlebarsInstance.getPartials().then(function(partials) {
-		handlebars.partials = partials;
+		configuredHandlebars.partials = partials;
 	});
 
-	app.set('views', directory + '/views');
+	app.set('views', options.directory + '/views');
 
 	app.engine('.html', expressHandlebarsInstance.engine);
 
@@ -36,3 +41,5 @@ module.exports = function(app, options) {
 
 	return exposePartials;
 };
+
+module.exports.handlebars = handlebars;
