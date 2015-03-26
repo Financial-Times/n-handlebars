@@ -8,7 +8,9 @@ var handlebars = require('./handlebars');
 var extendHelpers = require('./src/extend-helpers');
 
 module.exports = function(app, options) {
-	options = options || {};
+	if (!app || !options || !options.directory) {
+		throw 'next-handlebars requires an instance of an express app and an options object containing a directory property';
+	}
 
 	var configuredHandlebars = handlebars({
 		helpers: options.helpers

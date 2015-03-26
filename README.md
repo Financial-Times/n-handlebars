@@ -10,11 +10,11 @@ require('ft-next-handlebars')(app, options)
 
 Where options may have the following properties
 
+* `directory`: String - absolute path to the current application's working directory **REQUIRED**
 * `partialsDir`: Array of directories containing partials. This is concatenated to the default value of `./bower_components/`
 * `layoutsDir`: String - the directory in which express-handlebars layouts are contained
 * `defaultLayout`: Name of the default layout to use. Defaults to `false`
 * `helpers`: Map of custom helpers to add to handlebars (see below for a list those included by default)
-* `directory`: String - absolute path to the current application's working directory
 * `viewsDirectory`: String - subdirectory where the application's views are stored (default `/views`)
 
 Returns a promise which resolves when all partials in the supplied directories have been registered
