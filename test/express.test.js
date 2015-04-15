@@ -102,6 +102,12 @@ describe('express handlebars setup', function() {
 				.expect(200, /Full date: Friday, 1 August, 2014/, done);
 		});
 
+		it('should fallover if the datehelper gets an invalid date', function(done) {
+			request(app)
+				.get('/templated')
+				.expect(200, /Full date: /, done);
+		});
+
 		it('should provide a nice date helper that lets you easily output the date in an o-date compatible format', function(done) {
 			request(app)
 				.get('/templated')
