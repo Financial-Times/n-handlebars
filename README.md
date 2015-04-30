@@ -51,6 +51,7 @@ This is achieved by means of two helpers:
 <header>thing</header>
 {{#outputBlock 'my-block'}}default content{{/outputBlock}}
 <footer>thing</footer>
+
 // child.html
 {{#defineBlock 'my-block'}}
 	Mustaches to process: {{someVar}}
