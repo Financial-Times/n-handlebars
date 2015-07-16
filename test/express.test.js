@@ -105,7 +105,7 @@ describe('express handlebars setup', function() {
 		it('should fallover if the datehelper gets an invalid date', function(done) {
 			request(app)
 				.get('/templated')
-				.expect(200, /Full date: /, done);
+				.expect(200, /Full date:\ /, done);
 		});
 
 		it('should provide a nice date helper that lets you easily output the date in an o-date compatible format', function(done) {
@@ -143,6 +143,12 @@ describe('express handlebars setup', function() {
 				.get('/templated')
 				.expect(200, /dynamic-partial/, done)
 				.expect(200, /dynamicroot-iamroot/, done);
+		});
+
+		it('should provide a helper for decoding html entities', function(done) {
+			request(app)
+				.get('/templated')
+				.expect(200, /Start entities Something, something, something and something End Entities/, done);
 		});
 
 	});

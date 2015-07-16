@@ -12,6 +12,7 @@ module.exports = function (helpers) {
 	helpers.dateformat = require('./helpers/dateformat');
 	helpers.resize = require('./helpers/resize');
 	helpers.encode = require('./helpers/encode');
+	helpers.decodeHtmlEntities = require('./helpers/decode-html-entities');
 	helpers.defineBlock = require('./helpers/define-block');
 	helpers.outputBlock = require('./helpers/output-block');
 	helpers.slice = require('./helpers/slice');
