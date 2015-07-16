@@ -145,7 +145,7 @@ describe('express handlebars setup', function() {
 				.expect(200, /dynamicroot-iamroot/, done);
 		});
 
-		it('should provide an html entities helper', function(done) {
+		it('should provide a helper for decoding html entities', function(done) {
 			request(app)
 				.get('/templated')
 				.expect(200, /Start entities Something, something, something and something End Entities/, done);

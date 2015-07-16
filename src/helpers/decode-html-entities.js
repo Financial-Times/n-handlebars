@@ -1,9 +1,8 @@
 'use strict';
 
-// Decode HTML entities that don't fall under the usual unsafe list
+// Decodes HTML entities that don't fall under the usual unsafe list
 // i.e. for decoding characters that aren't &,<,>,",',`
 module.exports = function (str, opts) {
-	//TODO: add encode mode
 	var key;
 	var decodeMap = {
 		'&nbsp;': ' '

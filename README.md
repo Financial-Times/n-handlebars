@@ -97,9 +97,9 @@ Outputs an object as json.
 - `{{json obj}}` - for use within data attributes and elsewhere in html (will convert '"' to '&quot;' etc..)
 - `{{{json obj}}}` - for outputting the json unencoded
 
-### htmlEntities
+### decodeHtmlEntities
 Decodes a (very limited) safe list* of HTML entities into their respective characters (* = not `&`, `<`, `>`, `"`, `'` or ``)
-- `{{htmlEntities 'lorem&nbsp;ipsum&nbsp;dolar'}}` outputs `lorem ipsum dolar`
+- `{{decodeHtmlEntities 'lorem&nbsp;ipsum&nbsp;dolar'}}` outputs `lorem ipsum dolar`
 
 ## Logic helpers
 

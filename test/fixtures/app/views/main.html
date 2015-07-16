@@ -49,6 +49,6 @@ slice:{{#slice items limit="2" offset="2"}}{{this}}{{/slice}}:end
 {{usePartial 'dynamic-partial/test'}}
 {{/partial}}
 
-<p>Start entities {{htmlEntities entitiesText}} End Entities</p>
+<p>Start entities {{decodeHtmlEntities entitiesText}} End Entities</p>
 
 <div data-it="{{json obj}}"></div>
