@@ -3,12 +3,12 @@
 
 var port = process.env.PORT || 3000;
 var express = require('express');
-var Handlebars = require('../../../express.js');
+var handlebars = require('../../../express.js');
 var yell = require('./src/yell');
 
 var app = module.exports = express();
 
-var handlebarsPromise = Handlebars(app, {
+var handlebarsPromise = handlebars(app, {
 	partialsDir: [
 		__dirname + '/views/partials'
 	],
@@ -45,3 +45,7 @@ app.listen = function() {
 		actualAppListen.apply(app, args);
 	});
 };
+
+app.promise = handlebarsPromise.then(function () {
+	console.log('This then is attached later than the internal then attached by next-handlebars')
+});

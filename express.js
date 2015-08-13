@@ -7,18 +7,17 @@ var expressHandlebars = require('express-handlebars');
 var handlebars = require('./handlebars');
 var extendHelpers = require('./src/extend-helpers');
 
-module.exports = function(app, options) {
-	if (!app || !options || !options.directory) {
-		throw 'next-handlebars requires an instance of an express app and an options object containing a directory property';
+var nextifyHandlebars = function (options) {
+	if (!options || !options.directory) {
+		throw 'next-handlebars requires an options object containing a directory property'
 	}
-
 	var configuredHandlebars = handlebars({
 		helpers: options.helpers
 	});
 
 	var helpers = extendHelpers(options.helpers);
 
-	var expressHandlebarsInstance = new expressHandlebars.ExpressHandlebars({
+	var expressHandlebarsInstance = new expressHandlebars.create({
 		// use a handlebars instance we have direct access to so we can expose partials
 		handlebars: configuredHandlebars,
 		extname: '.html',
@@ -31,17 +30,30 @@ module.exports = function(app, options) {
 	});
 
 	// makes the usePartial helper possible
-	var exposePartials = expressHandlebarsInstance.getPartials().then(function(partials) {
+	return expressHandlebarsInstance.getPartials().then(function(partials) {
 		configuredHandlebars.partials = partials;
+		return expressHandlebarsInstance;
 	});
 
-	app.set('views', options.directory + (options.viewsDirectory || '/views'));
-
-	app.engine('.html', expressHandlebarsInstance.engine);
-
-	app.set('view engine', '.html');
-
-	return exposePartials;
 };
 
+var applyToExpress = function (app, options) {
+	if (!app) {
+		throw 'next-handlebars requires an instance of an express app';
+	}
+
+	return nextifyHandlebars(options)
+		.then(function (expressHandlebarsInstance) {
+			app.set('views', options.directory + (options.viewsDirectory || '/views'));
+
+			app.engine('.html', expressHandlebarsInstance.engine);
+
+			app.set('view engine', '.html');
+
+			return expressHandlebarsInstance;
+		});
+};
+
+module.exports = applyToExpress;
 module.exports.handlebars = handlebars;
+module.exports.standalone = nextifyHandlebars;
