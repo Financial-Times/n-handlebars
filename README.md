@@ -19,6 +19,10 @@ Where options may have the following properties
 
 Returns a promise which resolves when all partials in the supplied directories have been registered
 
+To use the express-handlebars instance by itself (occassionally useful for consuming templates from bower_components outside of the context of an express app) use `require('ft-next-handlebars').standalone(options)`
+
+A handlebars instance with all next helpers, but without partials, is also exposed at `require('ft-next-handlebars').handlebars`;
+
 ## Client side javascript
 
 ```

@@ -1,4 +1,4 @@
-/*global it, describe, beforeEach*/
+/*global it, describe, beforeEach, before*/
 "use strict";
 
 var request = require('supertest');
@@ -8,6 +8,9 @@ var Handlebars = require('../express');
 var expect = require('chai').expect;
 
 describe('express handlebars setup', function() {
+	before(function (done) {
+		app.promise.then(done);
+	});
 
 	it('should do templating', function(done) {
 		request(app)
