@@ -2,43 +2,16 @@
 
 var fs = require('fs');
 var Path = require('path');
+var denodeify = require('denodeify');
 
-// async fs
+var readdirAsync = denodeify(fs.readdir);
+var lstatAsync = denodeify(fs.lstat);
+var realpathAsync = denodeify(fs.realpath);
 
 var flatten = function(list) {
   return list.reduce(function(acc, it) {
     return acc.concat(it);
   }, []);
-};
-
-var readdirAsync = function(path) {
-	return new Promise(function(res, rej) {
-		fs.readdir(path, function(err, files) {
-			if(err) return rej(err);
-
-			res(files);
-		});
-	});
-};
-
-var lstatAsync = function(path) {
-	return new Promise(function(res, rej) {
-		fs.lstat(path, function(err, stats) {
-			if(err) return rej(err);
-
-			res(stats);
-		});
-	});
-};
-
-var realpathAsync = function(path) {
-	return new Promise(function(res, rej) {
-		fs.realpath(path, function(err, path) {
-			if(err) return rej(err);
-
-			res(path);
-		});
-	});
 };
 
 var itemsWithStats = function(directory) {
