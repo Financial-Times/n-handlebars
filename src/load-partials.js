@@ -9,73 +9,73 @@ var lstatAsync = denodeify(fs.lstat);
 var realpathAsync = denodeify(fs.realpath);
 
 var flatten = function(list) {
-  return list.reduce(function(acc, it) {
-    return acc.concat(it);
-  }, []);
+	return list.reduce(function(acc, it) {
+		return acc.concat(it);
+	}, []);
 };
 
 var itemsWithStats = function(directory) {
-  return readdirAsync(directory)
-  .then(function(files) {
-    var stats = files.map(function(file) {
-      var fullPath = Path.join(directory, file);
+	return readdirAsync(directory)
+	.then(function(files) {
+		var stats = files.map(function(file) {
+			var fullPath = Path.join(directory, file);
 
-      return lstatAsync(fullPath)
-      .then(function(stat) {
-        return {name: file, path: fullPath, stat: stat};
-      });
-    });
+			return lstatAsync(fullPath)
+			.then(function(stat) {
+				return {name: file, path: fullPath, stat: stat};
+			});
+		});
 
-    return Promise.all(stats);
-  });
+		return Promise.all(stats);
+	});
 };
 
 var classifyItems = function(items, otherPaths) {
-  return ({
-    directories: items
-      .filter(function(it) { return it.stat.isDirectory(); })
-      .concat(otherPaths)
-      .map(function(it) { return { name: it.path || it, path: it.path || it }; }),
+	return ({
+		directories: items
+			.filter(function(it) { return it.stat.isDirectory(); })
+			.concat(otherPaths)
+			.map(function(it) { return { name: it.path || it, path: it.path || it }; }),
 
-  links: items
-    .filter(function(it) { return it.stat.isSymbolicLink(); })
-    .map(function(it) { return it.path })
-  });
+	links: items
+		.filter(function(it) { return it.stat.isSymbolicLink(); })
+		.map(function(it) { return it.path })
+	});
 };
 
 var selectValidLinkedPaths = function(linkedItems, ignores, linkPath) {
-  return linkedItems
-    .filter(function(item) { return ignores.indexOf(item.name) < 0 && item.stat.isDirectory(); })
-    .map(function(item) { return { name: Path.join(linkPath, item.name), path: item.path }; });
+	return linkedItems
+		.filter(function(item) { return ignores.indexOf(item.name) < 0 && item.stat.isDirectory(); })
+		.map(function(item) { return { name: Path.join(linkPath, item.name), path: item.path }; });
 };
 
 var itemNamespace = function(name, bowerRoot) {
-  var namespace = name.replace(bowerRoot, '');
-  if(namespace === name)
-    return '';
+	var namespace = name.replace(bowerRoot, '');
+	if(namespace === name)
+		return '';
 
-  return namespace;
+	return namespace;
 };
 
 // exports
 
 var loadPartials = function(ehInstance, bowerRoot, otherPaths, ignores) {
 	// Get files in bowerRoot
-  return itemsWithStats(bowerRoot)
+	return itemsWithStats(bowerRoot)
 	.then(function(items) {
-    items = classifyItems(items, otherPaths);
+		items = classifyItems(items, otherPaths);
 
-    return Promise.all(items.links
-      .map(function(link) {
-  			return realpathAsync(link)
-  			.then(function(linkedPath) {
-          return itemsWithStats(linkedPath);
-        })
-        .then(function(it) {
-          return selectValidLinkedPaths(it, ignores, link);
-        });
-      })
-    )
+		return Promise.all(items.links
+			.map(function(link) {
+				return realpathAsync(link)
+				.then(function(linkedPath) {
+					return itemsWithStats(linkedPath);
+				})
+				.then(function(it) {
+					return selectValidLinkedPaths(it, ignores, link);
+				});
+			})
+		)
 		.then(function(paths) {
 			return items.directories.concat(flatten(paths));
 		});
@@ -86,7 +86,7 @@ var loadPartials = function(ehInstance, bowerRoot, otherPaths, ignores) {
 
 			return ehInstance.getTemplates(dir.path)
 			.then(function(templates) {
-        return ({
+				return ({
 					templates: templates,
 					namespace: namespace
 				});
