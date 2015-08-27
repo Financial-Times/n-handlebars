@@ -3,6 +3,7 @@
 
 require('es6-promise').polyfill();
 
+var Path = require('path');
 var expressHandlebars = require('express-handlebars');
 var handlebars = require('./handlebars');
 var extendHelpers = require('./src/extend-helpers');
@@ -28,7 +29,7 @@ var nextifyHandlebars = function (options) {
 	});
 
 	var partialsDir = (options.partialsDir || []);
-	var dependencyRoot = options.directory + '/bower_components/';
+	var dependencyRoot = Path.join(options.directory, '/bower_components/');
 	var ignoreListInLinkedDeps = ['.git', 'node_modules', 'bower_components', 'demos'];
 
 	// look up templates on our own to avoid scanning thousands of files
