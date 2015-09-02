@@ -7,6 +7,7 @@ var denodeify = require('denodeify');
 var readdirAsync = denodeify(fs.readdir);
 var lstatAsync = denodeify(fs.lstat);
 var realpathAsync = denodeify(fs.realpath);
+var exists = denodeify(fs.exists, function(doesExists) { return [undefined, doesExists]; });
 
 var flatten = function(list) {
 	return list.reduce(function(acc, it) {
@@ -15,19 +16,23 @@ var flatten = function(list) {
 };
 
 var itemsWithStats = function(directory) {
-	return readdirAsync(directory)
-	.then(function(files) {
-		var stats = files.map(function(file) {
-			var fullPath = Path.join(directory, file);
+	return exists(directory)
+		.then(function(exists) {
+			if (!exists) return [];
+			return readdirAsync(directory)
+				.then(function(files) {
+					var stats = files.map(function(file) {
+						var fullPath = Path.join(directory, file);
 
-			return lstatAsync(fullPath)
-			.then(function(stat) {
-				return {name: file, path: fullPath, stat: stat};
-			});
+						return lstatAsync(fullPath)
+						.then(function(stat) {
+							return {name: file, path: fullPath, stat: stat};
+						});
+					});
+
+					return Promise.all(stats);
+				});
 		});
-
-		return Promise.all(stats);
-	});
 };
 
 var classifyItems = function(items, otherPaths) {
