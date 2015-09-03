@@ -8,8 +8,8 @@ var Handlebars = require('../express');
 var expect = require('chai').expect;
 
 describe('express handlebars setup', function() {
-	before(function (done) {
-		app.promise.then(done);
+	before(function() {
+		return app.promise;
 	});
 
 	it('should do templating', function(done) {
