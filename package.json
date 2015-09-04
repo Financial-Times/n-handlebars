@@ -1,6 +1,6 @@
 {
   "name": "ft-next-handlebars",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "main": "express.js",
   "scripts": {
     "test": "make test",
