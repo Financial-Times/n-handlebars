@@ -2,7 +2,7 @@
 
 module.exports = function(context, block) {
 	var ret = "";
-	if (!context) {
+	if (!context || !Array.isArray(context)) {
 		return ret;
 	}
 	var offset = parseInt(block.hash.offset) || 0;
