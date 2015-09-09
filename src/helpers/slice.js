@@ -2,6 +2,9 @@
 
 module.exports = function(context, block) {
 	var ret = "";
+	if (!context) {
+		return ret;
+	}
 	var offset = parseInt(block.hash.offset) || 0;
 	var limit = parseInt(block.hash.limit) || 5;
 	var i = offset;
