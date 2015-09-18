@@ -11,7 +11,7 @@
     "denodeify": "^1.2.1",
     "es6-promise": "^2.0.1",
     "express-handlebars": "blendlabs/express-handlebars#master",
-    "handlebars": "^3.0.0"
+    "handlebars": "^4.0.0"
   },
   "devDependencies": {
     "chai": "^2.1.2",
