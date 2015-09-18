@@ -8,7 +8,6 @@ module.exports = function (helpers) {
 	helpers.ifEquals = require('./helpers/if-equals');
 	helpers.ifAll = require('./helpers/if-all');
 	helpers.ifSome = require('./helpers/if-some');
-	helpers.topicUrl = require('./helpers/topic-url');
 	helpers.dateformat = require('./helpers/dateformat');
 	helpers.resize = require('./helpers/resize');
 	helpers.encode = require('./helpers/encode');

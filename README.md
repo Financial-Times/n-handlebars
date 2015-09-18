@@ -19,6 +19,9 @@ Where options may have the following properties
 
 Returns a promise which resolves when all partials in the supplied directories have been registered
 
+
+### Other server side applications
+
 To use the express-handlebars instance by itself (occassionally useful for consuming templates from bower_components outside of the context of an express app) use `require('ft-next-handlebars').standalone(options)`
 
 A handlebars instance with all next helpers, but without partials, is also exposed at `require('ft-next-handlebars').handlebars`;
@@ -34,11 +37,6 @@ Where options may have the following properties
 * `helpers`: Map of custom helpers to add to handlebars (see below for a list those included by default)
 
 Returns a handlebars instance
-
-## Other server side applications
-
-Should you need to use handlebars with all the next helpers but without next-express use `require('ft-next-handlebars').handlebars(options)`, which has the same API a the client side module
-
 
 # THE HELPERS
 
@@ -79,10 +77,6 @@ Outputting date objects as strings
 Encoding strings to be output safely in html
 - `{{encode q mode='uriComponent'}}` outputs the result of `encodeURIComponent(q)` (`{{encode q }}` will also do this)
 - `{{encode q mode='uri'}}` outputs the result of `encodeURI(q)`
-
-### topicUrl
-Takes a topic identifier (currently something like `topic:"European%20Cars"`) and converts to a next stream url `/stream/topic/European%20Cars`
-- `{{topicUrl searchString}}`
 
 ### paragraphs
 Outputting some paragraphs from a larger chunk of html, zero indexed
