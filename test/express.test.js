@@ -120,7 +120,7 @@ describe('express handlebars setup', function() {
 		it('should provide a uri encoding helper', function(done) {
 			request(app)
 				.get('/templated')
-				.expect(200, /http\:\/\/domain\.com\?q=this%20\/%20that http%3A%2F%2Fdomain\.com%3Fq%3Dthis%20%2F%20that/, done);
+				.expect(200, /http\:\/\/domain\.com\?q&#x3D;this%20\/%20that http%3A%2F%2Fdomain\.com%3Fq%3Dthis%20%2F%20that/, done);
 		});
 
 		it('should provide a topic url helper', function(done) {
