@@ -1,5 +1,5 @@
 {
-  "name": "ft-next-handlebars",
+  "name": "@financial-times/n-handlebars",
   "version": "1.4.0",
   "main": "express.js",
   "scripts": {
