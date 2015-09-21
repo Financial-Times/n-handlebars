@@ -1,11 +1,11 @@
-# next-handlebars
+# n-handlebars
 
 Enhanced handlebars for use in next applications
 
 ## Express applications
 
 ```
-require('ft-next-handlebars')(app, options)
+require('n-handlebars')(app, options)
 ```
 
 Where options may have the following properties
@@ -19,14 +19,14 @@ Where options may have the following properties
 
 Returns a promise which resolves when all partials in the supplied directories have been registered
 
-To use the express-handlebars instance by itself (occassionally useful for consuming templates from bower_components outside of the context of an express app) use `require('ft-next-handlebars').standalone(options)`
+To use the express-handlebars instance by itself (occassionally useful for consuming templates from bower_components outside of the context of an express app) use `require('n-handlebars').standalone(options)`
 
-A handlebars instance with all next helpers, but without partials, is also exposed at `require('ft-next-handlebars').handlebars`;
+A handlebars instance with all next helpers, but without partials, is also exposed at `require('n-handlebars').handlebars`;
 
 ## Client side javascript
 
 ```
-require('next-handlebars')(options)
+require('n-handlebars')(options)
 ```
 
 Where options may have the following properties
@@ -37,7 +37,7 @@ Returns a handlebars instance
 
 ## Other server side applications
 
-Should you need to use handlebars with all the next helpers but without next-express use `require('ft-next-handlebars').handlebars(options)`, which has the same API a the client side module
+Should you need to use handlebars with all the next helpers but without next-express use `require('n-handlebars').handlebars(options)`, which has the same API a the client side module
 
 
 # THE HELPERS

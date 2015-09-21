@@ -11,7 +11,7 @@ var loadPartials = require('./src/load-partials');
 
 var nextifyHandlebars = function (options) {
 	if (!options || !options.directory) {
-		throw 'next-handlebars requires an options object containing a directory property';
+		throw 'n-handlebars requires an options object containing a directory property';
 	}
 	var configuredHandlebars = handlebars({
 		helpers: options.helpers
@@ -49,7 +49,7 @@ var nextifyHandlebars = function (options) {
 
 var applyToExpress = function (app, options) {
 	if (!app) {
-		throw 'next-handlebars requires an instance of an express app';
+		throw 'n-handlebars requires an instance of an express app';
 	}
 
 	return nextifyHandlebars(options)

@@ -28,6 +28,6 @@ app.listen = function() {
 };
 
 app.promise = handlebarsPromise.then(function () {
-	console.log('This then is attached later than the internal then attached by next-handlebars')
+	console.log('This then is attached later than the internal then attached by n-handlebars')
 });
 
