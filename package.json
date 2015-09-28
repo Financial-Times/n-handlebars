@@ -1,6 +1,6 @@
 {
   "name": "@financial-times/n-handlebars",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "main": "express.js",
   "scripts": {
     "test": "make test",
