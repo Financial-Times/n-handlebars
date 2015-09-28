@@ -9,16 +9,15 @@
   "dependencies": {
     "dateformat": "^1.0.11",
     "denodeify": "^1.2.1",
-    "es6-promise": "^2.0.1",
     "express-handlebars": "blendlabs/express-handlebars#master",
     "handlebars": "^4.0.0"
   },
   "devDependencies": {
-    "chai": "^2.1.2",
+    "chai": "^3.3.0",
     "express": "^4.12.3",
     "mocha": "^2.0.1",
     "npm-prepublish": "^1.0.2",
     "sinon": "^1.14.1",
-    "supertest": "^0.15.0"
+    "supertest": "^1.1.0"
   }
 }

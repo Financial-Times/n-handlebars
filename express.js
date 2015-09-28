@@ -1,8 +1,6 @@
 /*jshint node:true*/
 "use strict";
 
-require('es6-promise').polyfill();
-
 var Path = require('path');
 var expressHandlebars = require('express-handlebars');
 var handlebars = require('./handlebars');
