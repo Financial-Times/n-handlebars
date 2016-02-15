@@ -112,12 +112,17 @@ Outputs contents if a thing is equal to a value
 - `{{#ifEquals thing 'value'}} some content {{else}} some fallback content {{/ifEquals}}`
 
 ### ifAll
-Outputs contents if a number of things are truthy *Note that handlebars has a [slightly odd understanding of truthiness](http://stackoverflow.com/questions/21444525/what-is-truthy-or-falsy-in-mustache-and-handlebars)*
+Outputs contents if a number of things are truthy
 - `{{#ifAll thing1 thing2 thing3}} some content {{else}} some fallback content {{/ifAll}}`
 
 ### ifSome
-Outputs contents if at least one of a number of things is truthy *Note that handlebars has a [slightly odd understanding of truthiness](http://stackoverflow.com/questions/21444525/what-is-truthy-or-falsy-in-mustache-and-handlebars)*
+Outputs contents if at least one of a number of things is truthy
 - `{{#ifSome thing1 thing2 thing3}} some content {{else}} some fallback content {{/ifSome}}`
+
+### ifBool
+Outputs contents if a complex boolean logic expression is satisfied. Uses string formatting to generate the expression
+- `{{#ifBool thing1 thing2 "($0 && $1)"}} some content {{else}} some fallback content {{/ifBool}}`
+
 
 ## Iteration helpers
 
