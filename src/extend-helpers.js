@@ -19,7 +19,6 @@ module.exports = function (helpers) {
 	helpers.slice = require('./helpers/slice');
 	helpers.json = require('./helpers/json');
 	helpers.usePartial = require('./helpers/use-partial');
-	helpers.minify = require('./helpers/minify');
 
 	return helpers;
 };
