@@ -47,7 +47,7 @@ slice:{{#slice items limit="2" offset="2"}}{{this}}{{/slice}}:end
 {{topicUrl "page:\"read it\""}} {{topicUrl "section:\"segment it\""}}
 {{#resize 200}}http://image.jpg{{/resize}}
 {{#partial}}
-{{usePartial 'dynamic-partial/test'}}
+{{usePartial 'test' path='dynamic-partial'}}
 {{/partial}}
 
 <p>Start entities {{decodeHtmlEntities entitiesText}} End Entities</p>
