@@ -16,6 +16,7 @@ Where options may have the following properties
 * `defaultLayout`: Name of the default layout to use. Defaults to `false`
 * `helpers`: Map of custom helpers to add to handlebars (see below for a list those included by default)
 * `viewsDirectory`: String - subdirectory where the application's views are stored (default `/views`)
+* `limitToComponent`: String - limit the bower components partials included to just a specific component (e.g. 'n-ui')
 
 Returns a promise which resolves when all partials in the supplied directories have been registered
 

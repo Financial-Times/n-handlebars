@@ -29,9 +29,10 @@ var nextifyHandlebars = function (options) {
 	var partialsDir = (options.partialsDir || []);
 	var dependencyRoot = Path.join(options.directory, '/bower_components/');
 	var ignoreListInLinkedDeps = ['.git', 'node_modules', 'bower_components', 'demos'];
+	var limitToComponent = (options.limitToComponent || '');
 
 	// look up templates on our own to avoid scanning thousands of files
-	return loadPartials(expressHandlebarsInstance, dependencyRoot, partialsDir, ignoreListInLinkedDeps)
+	return loadPartials(expressHandlebarsInstance, dependencyRoot, partialsDir, ignoreListInLinkedDeps, limitToComponent)
 	.then(function(partials) {
 		expressHandlebarsInstance.partialsDir = partials;
 
