@@ -15,12 +15,15 @@ var flatten = function(list) {
 	}, []);
 };
 
-var itemsWithStats = function(directory) {
+var itemsWithStats = function(directory, limitToComponents) {
 	return exists(directory)
 		.then(function(exists) {
 			if (!exists) return [];
 			return readdirAsync(directory)
 				.then(function(files) {
+					if (limitToComponents) {
+						files = files.filter((f) => limitToComponents.indexOf(f) > -1);
+					}
 					var stats = files.map(function(file) {
 						var fullPath = Path.join(directory, file);
 
@@ -64,9 +67,9 @@ var itemNamespace = function(name, bowerRoot) {
 
 // exports
 
-var loadPartials = function(ehInstance, bowerRoot, otherPaths, ignores) {
+var loadPartials = function(ehInstance, bowerRoot, otherPaths, ignores, limitToComponents) {
 	// Get files in bowerRoot
-	return itemsWithStats(bowerRoot)
+	return itemsWithStats(bowerRoot, limitToComponents)
 	.then(function(items) {
 		items = classifyItems(items, otherPaths);
 
