@@ -1,3 +1,5 @@
+include n.Makefile
+
 .PHONY: test
 
 clean:
