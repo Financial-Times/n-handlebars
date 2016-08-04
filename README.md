@@ -66,7 +66,10 @@ This is achieved by means of two helpers:
 
 ### usePartial
 Allows a partial to be selected based on the value of a variable
-- `{{{usePartial 'path/to/partial'}}}` *Note* a '>' is not required in the path and you will normally need triple mustaches
+- `{{{usePartial variable path='path/to/partial'}}}`
+
+If `variable` value is `foobar` then partial will be `path/to/partial/foobar`.
+*Note* a '>' is not required in the path and you will normally need triple mustaches
 
 
 ## Content helpers
