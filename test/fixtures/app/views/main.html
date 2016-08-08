@@ -44,11 +44,12 @@ ifBool:{{#ifBool thing1 thing2 nothing "$0 && ($1 || $2)"}}first{{else}}not firs
 slice:{{#slice items limit="2" offset="2"}}{{this}}{{/slice}}:end
 
 {{encode "http://domain.com?q=this / that" mode='uri'}} {{encode "http://domain.com?q=this / that"}}
-{{topicUrl "page:\"read it\""}} {{topicUrl "section:\"segment it\""}}
 {{#resize 200}}http://image.jpg{{/resize}}
 {{#partial}}
 {{usePartial 'test' path='dynamic-partial'}}
 {{/partial}}
+
+<p>Concat {{concat "one" "two" "three"}}
 
 <p>Start entities {{decodeHtmlEntities entitiesText}} End Entities</p>
 

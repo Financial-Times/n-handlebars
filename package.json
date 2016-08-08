@@ -14,10 +14,11 @@
   },
   "devDependencies": {
     "chai": "^3.3.0",
+    "eslint": "^3.2.2",
     "express": "^4.12.3",
+    "lintspaces-cli": "^0.4.0",
     "mocha": "^2.0.1",
     "npm-prepublish": "^1.2.1",
-    "origami-build-tools": "^4.3.0",
     "sinon": "^1.14.1",
     "supertest": "^1.1.0"
   },

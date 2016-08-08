@@ -1,6 +1,6 @@
 'use strict';
 
-var dateFormat = require('dateformat');
+const dateFormat = require('dateformat');
 
 module.exports = function(format, options) {
 	try {

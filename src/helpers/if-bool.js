@@ -21,5 +21,3 @@ module.exports = function() {
 	const compiledExpression = compiledExpressions[expression] || (compiledExpressions[expression] = compile(expression));
 	return compiledExpression(variables) ? opts.fn(this) : opts.inverse(this) ;
 };
-
-

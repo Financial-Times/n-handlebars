@@ -9,7 +9,6 @@ module.exports = function (helpers) {
 	helpers.ifAll = require('./helpers/if-all');
 	helpers.ifSome = require('./helpers/if-some');
 	helpers.ifBool = require('./helpers/if-bool');
-	helpers.topicUrl = require('./helpers/topic-url');
 	helpers.dateformat = require('./helpers/dateformat');
 	helpers.resize = require('./helpers/resize');
 	helpers.encode = require('./helpers/encode');
@@ -18,6 +17,7 @@ module.exports = function (helpers) {
 	helpers.outputBlock = require('./helpers/output-block');
 	helpers.slice = require('./helpers/slice');
 	helpers.json = require('./helpers/json');
+	helpers.concat = require('./helpers/concat');
 	helpers.usePartial = require('./helpers/use-partial');
 
 	return helpers;

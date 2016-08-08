@@ -2,9 +2,9 @@
 
 // Decodes HTML entities that don't fall under the usual unsafe list
 // i.e. for decoding characters that aren't &,<,>,",',`
-module.exports = function (str, opts) {
-	var key;
-	var decodeMap = {
+module.exports = function (str) {
+	let key;
+	const decodeMap = {
 		'&nbsp;': ' '
 	};
 

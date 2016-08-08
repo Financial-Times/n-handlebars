@@ -1,7 +1,6 @@
 /*jshint node:true*/
 'use strict';
 
-var port = process.env.PORT || 3000;
 var express = require('express');
 var handlebars = require('../../../express.js');
 var yell = require('./src/yell');
@@ -16,7 +15,7 @@ var handlebarsPromise = handlebars(app, {
 	directory: __dirname
 });
 
-app.get('/templated', function(req, res, next) {
+app.get('/templated', function(req, res) {
 	res.render('main', viewData);
 });
 
