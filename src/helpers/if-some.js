@@ -2,8 +2,8 @@
 
 module.exports = function() {
 
-	var args = [].slice.call(arguments);
-	var opts = args.pop();
+	const args = [].slice.call(arguments);
+	const opts = args.pop();
 
 	return args.some(function (arg) {
 		return arg;

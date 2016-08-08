@@ -1,6 +1,6 @@
 'use strict';
-var path = require('path');
-var handlebars = require('handlebars');
+const path = require('path');
+const handlebars = require('handlebars');
 
 module.exports = function(name, opts) {
 	if(opts.hash.path){

@@ -84,10 +84,6 @@ Encoding strings to be output safely in html
 - `{{encode q mode='uriComponent'}}` outputs the result of `encodeURIComponent(q)` (`{{encode q }}` will also do this)
 - `{{encode q mode='uri'}}` outputs the result of `encodeURI(q)`
 
-### topicUrl
-Takes a topic identifier (currently something like `topic:"European%20Cars"`) and converts to a next stream url `/stream/topic/European%20Cars`
-- `{{topicUrl searchString}}`
-
 ### paragraphs
 Outputting some paragraphs from a larger chunk of html, zero indexed
 - `{{{paragraphs body start=0 end=1}}}` will output the first paragraph of `body`. *Note the triple mustaches*
@@ -104,6 +100,10 @@ Replaces an image url with an image service url, serving an appropriately resize
 Outputs an object as json.
 - `{{json obj}}` - for use within data attributes and elsewhere in html (will convert '"' to '&quot;' etc..)
 - `{{{json obj}}}` - for outputting the json unencoded
+
+### concat
+Concatenates strings.
+- `{{concat str1 str2}}`
 
 ### decodeHtmlEntities
 Decodes a (very limited) safe list* of HTML entities into their respective characters (* = not `&`, `<`, `>`, `"`, `'` or ``)

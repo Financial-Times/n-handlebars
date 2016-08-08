@@ -1,8 +1,6 @@
 /*global it, describe*/
 "use strict";
 
-var request = require('supertest');
-var sinon = require('sinon');
 var handlebars = require('../express');
 var expect = require('chai').expect;
 var yell = require('./fixtures/app/src/yell')

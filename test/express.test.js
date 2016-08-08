@@ -3,9 +3,6 @@
 
 var request = require('supertest');
 var app = require('./fixtures/app/main');
-var sinon = require('sinon');
-var Handlebars = require('../express');
-var expect = require('chai').expect;
 
 describe('express handlebars setup', function() {
 	before(function() {
@@ -129,10 +126,10 @@ describe('express handlebars setup', function() {
 				.expect(200, /http\:\/\/domain\.com\?q&#x3D;this%20\/%20that http%3A%2F%2Fdomain\.com%3Fq%3Dthis%20%2F%20that/, done);
 		});
 
-		it('should provide a topic url helper', function(done) {
+		it('should provide a string concatenation helper', function(done) {
 			request(app)
 				.get('/templated')
-				.expect(200, /\/page\/read it \/stream\/section\/segment it/, done);
+				.expect(200, /Concat onetwothree/, done);
 		});
 
 		it('should provide an image resizing helper', function(done) {

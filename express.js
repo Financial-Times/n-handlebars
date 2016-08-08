@@ -1,23 +1,22 @@
-/*jshint node:true*/
 "use strict";
 
-var Path = require('path');
-var expressHandlebars = require('express-handlebars');
-var handlebars = require('./handlebars');
-var extendHelpers = require('./src/extend-helpers');
-var loadPartials = require('./src/load-partials');
+const Path = require('path');
+const expressHandlebars = require('express-handlebars');
+const handlebars = require('./handlebars');
+const extendHelpers = require('./src/extend-helpers');
+const loadPartials = require('./src/load-partials');
 
-var nextifyHandlebars = function (options) {
+const nextifyHandlebars = function (options) {
 	if (!options || !options.directory) {
 		throw 'n-handlebars requires an options object containing a directory property';
 	}
-	var configuredHandlebars = handlebars({
+	const configuredHandlebars = handlebars({
 		helpers: options.helpers
 	});
 
-	var helpers = extendHelpers(options.helpers);
+	const helpers = extendHelpers(options.helpers);
 
-	var expressHandlebarsInstance = new expressHandlebars.create({
+	const expressHandlebarsInstance = new expressHandlebars.create({ // eslint-disable-line
 		// use a handlebars instance we have direct access to so we can expose partials
 		handlebars: configuredHandlebars,
 		extname: '.html',
@@ -26,10 +25,10 @@ var nextifyHandlebars = function (options) {
 		layoutsDir: options.layoutsDir || undefined
 	});
 
-	var partialsDir = (options.partialsDir || []);
-	var dependencyRoot = Path.join(options.directory, '/bower_components/');
-	var ignoreListInLinkedDeps = ['.git', 'node_modules', 'bower_components', 'demos'];
-	var limitToComponents = (options.limitToComponents || '');
+	const partialsDir = (options.partialsDir || []);
+	const dependencyRoot = Path.join(options.directory, '/bower_components/');
+	const ignoreListInLinkedDeps = ['.git', 'node_modules', 'bower_components', 'demos'];
+	const limitToComponents = (options.limitToComponents || '');
 
 	// look up templates on our own to avoid scanning thousands of files
 	return loadPartials(expressHandlebarsInstance, dependencyRoot, partialsDir, ignoreListInLinkedDeps, limitToComponents)
@@ -46,7 +45,7 @@ var nextifyHandlebars = function (options) {
 	});
 };
 
-var applyToExpress = function (app, options) {
+const applyToExpress = function (app, options) {
 	if (!app) {
 		throw 'n-handlebars requires an instance of an express app';
 	}

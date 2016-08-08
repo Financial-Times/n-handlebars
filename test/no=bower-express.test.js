@@ -3,9 +3,6 @@
 
 var request = require('supertest');
 var app = require('./fixtures/no-bower-app/main');
-var sinon = require('sinon');
-var Handlebars = require('../express');
-var expect = require('chai').expect;
 
 describe('express handlebars setup', function() {
 	before(function() {
