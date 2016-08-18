@@ -69,6 +69,12 @@ describe('express handlebars setup', function() {
 				.expect(200, /ifEquals\:first not second/, done);
 		});
 
+		it('should provide an unless equals helper', function(done) {
+			request(app)
+				.get('/templated')
+				.expect(200, /unlessEquals\:not first second/, done);
+		});
+
 		it('should provide an if all helper', function(done) {
 			request(app)
 				.get('/templated')
