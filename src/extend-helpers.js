@@ -20,6 +20,7 @@ module.exports = function (helpers) {
 	helpers.json = require('./helpers/json');
 	helpers.concat = require('./helpers/concat');
 	helpers.usePartial = require('./helpers/use-partial');
+	helpers.presenter = require('./helpers/presenter');
 
 	return helpers;
 };

@@ -137,3 +137,35 @@ Outputs contents if a complex boolean logic expression is satisfied. Uses string
 ### slice
 Loop through a subset of items
 - `{{#slice items limit="2" offset="4"}} some content {{/slice}}
+
+## Presenter helpers
+
+### presenter
+Makes a presenter class available to the template for the current context
+- example
+```
+		{{#presenter presenterPath context hashArguments}} //1
+			<h3>{{@myPresenter.title}}</h3> //2
+			<p>{{subheader}}</p> //3
+			<ol>
+				{{#with @myPresenter.items}} //4
+					<li><p>{{relatedTitle}}</p></li>
+				{{/with}}
+			</ol>
+		{{/presenter}}
+```
+1. Instantiating the presenter
+presenterPath can either be a file from the root of the application, eg. `./presenters/my-presenter` or if in a bower component `component/presenters/my-presenter`.
+context is the current data context - ie. @this
+hashArguments is any data that you want to pass to the presenter from the template, eg. size='large' widths='1,2,3' (these can only be passed as strings)
+Any hashArguments are added to the data context and passed to the presenter.
+
+2. Retrieving data from the presenter
+(swap myPresenter for the camel cased file name for your presenter)
+@myPresenter.title will call the title function of your presenter and receive back the output of that function. This could be a text string for example.
+
+3. Using current data context
+the current data context is still available
+
+4. Using an array from the presenter
+existing helpers, eg. #each, #with #slice can be used with arrays passed back from the presenter.
