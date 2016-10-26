@@ -21,6 +21,7 @@ module.exports = function (helpers) {
 	helpers.concat = require('./helpers/concat');
 	helpers.usePartial = require('./helpers/usePartial');
 	helpers.presenter = require('./helpers/presenter');
+	helpers.debug = require('./helpers/debug');
 
 	return helpers;
 };
