@@ -4,22 +4,22 @@ module.exports = function (helpers) {
 	helpers = helpers || {};
 
 	helpers.paragraphs = require('./helpers/paragraphs');
-	helpers.removeImageTags = require('./helpers/remove-image-tags');
-	helpers.ifEquals = require('./helpers/if-equals');
-	helpers.ifAll = require('./helpers/if-all');
-	helpers.ifSome = require('./helpers/if-some');
-	helpers.ifBool = require('./helpers/if-bool');
-	helpers.unlessEquals = require('./helpers/unless-equals');
+	helpers.removeImageTags = require('./helpers/removeImageTags');
+	helpers.ifEquals = require('./helpers/ifEquals');
+	helpers.ifAll = require('./helpers/ifAll');
+	helpers.ifSome = require('./helpers/ifSome');
+	helpers.ifBool = require('./helpers/ifBool');
+	helpers.unlessEquals = require('./helpers/unlessEquals');
 	helpers.dateformat = require('./helpers/dateformat');
 	helpers.resize = require('./helpers/resize');
 	helpers.encode = require('./helpers/encode');
-	helpers.decodeHtmlEntities = require('./helpers/decode-html-entities');
-	helpers.defineBlock = require('./helpers/define-block');
-	helpers.outputBlock = require('./helpers/output-block');
+	helpers.decodeHtmlEntities = require('./helpers/decodeHtmlEntities');
+	helpers.defineBlock = require('./helpers/defineBlock');
+	helpers.outputBlock = require('./helpers/outputBlock');
 	helpers.slice = require('./helpers/slice');
 	helpers.json = require('./helpers/json');
 	helpers.concat = require('./helpers/concat');
-	helpers.usePartial = require('./helpers/use-partial');
+	helpers.usePartial = require('./helpers/usePartial');
 	helpers.presenter = require('./helpers/presenter');
 
 	return helpers;
