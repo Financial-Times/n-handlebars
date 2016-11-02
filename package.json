@@ -7,6 +7,7 @@
     "release": "npm-prepublish --verbose && npm publish && git checkout package.json"
   },
   "dependencies": {
+    "@financial-times/n-image": "^4.8.0",
     "dateformat": "^1.0.11",
     "denodeify": "^1.2.1",
     "express-handlebars": "blendlabs/express-handlebars#master",

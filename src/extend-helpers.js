@@ -23,6 +23,7 @@ module.exports = function (helpers) {
 	helpers.usePartial = require('./helpers/usePartial');
 	helpers.presenter = require('./helpers/presenter');
 	helpers.debug = require('./helpers/debug');
+	helpers.nImagePresenter = require('@financial-times/n-image/dist/handlebars-helpers/nImagePresenter');
 
 	return helpers;
 };
