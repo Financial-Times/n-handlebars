@@ -23,6 +23,7 @@ module.exports = function (helpers) {
 	helpers.usePartial = require('./helpers/usePartial');
 	helpers.presenter = require('./helpers/presenter');
 	helpers.debug = require('./helpers/debug');
+	helpers.array = require('./helpers/array');
 
 	return helpers;
 };
