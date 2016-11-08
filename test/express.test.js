@@ -24,7 +24,7 @@ describe('express handlebars setup', function() {
 	it('should integrate with the image service', function(done) {
 		request(app)
 			.get('/templated')
-			.expect(200, /\/\/next-geebee.ft.com\/image\/v1\/images\/raw\//, done);
+			.expect(200, /\/\/www.ft.com\/__origami\/service\/image\/v2\/images\/raw\//, done);
 	});
 
 	it('should support loading partials via bower', function(done) {
@@ -141,7 +141,7 @@ describe('express handlebars setup', function() {
 		it('should provide an image resizing helper', function(done) {
 			request(app)
 				.get('/templated')
-				.expect(200, /\/\/next-geebee\.ft\.com\/image\/v1\/images\/raw\/http%3A%2F%2Fimage\.jpg\?width=200&source=next&fit=scale-down/, done);
+				.expect(200, /\/\/www.ft.com\/__origami\/service\/image\/v2\/images\/raw\/http%3A%2F%2Fimage\.jpg\?width=200&source=next&fit=scale-down/, done);
 		});
 
 		it('should provide a json helper', function(done) {
