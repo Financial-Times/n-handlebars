@@ -60,6 +60,12 @@ describe('express handlebars setup', function() {
 				.get('/templated')
 				.expect(200, /slice\:34\:end/, done);
 		});
+
+		it('should provide an index increment helper', function(done) {
+			request(app)
+				.get('/templated')
+				.expect(200, /increment\:12345\:end/, done);
+		});
 	});
 
 	describe('logic helpers', function () {

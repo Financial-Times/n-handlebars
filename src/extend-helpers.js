@@ -18,6 +18,7 @@ module.exports = function (helpers) {
 	helpers.defineBlock = require('./helpers/defineBlock');
 	helpers.outputBlock = require('./helpers/outputBlock');
 	helpers.slice = require('./helpers/slice');
+	helpers.increment = require('./helpers/increment');
 	helpers.json = require('./helpers/json');
 	helpers.concat = require('./helpers/concat');
 	helpers.usePartial = require('./helpers/usePartial');

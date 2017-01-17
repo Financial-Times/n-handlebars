@@ -43,6 +43,7 @@ ifSome:{{#ifSome thing1 nothing}}first{{else}}not first{{/ifSome}} {{#ifSome not
 ifBool:{{#ifBool thing1 thing2 nothing "$0 && ($1 || $2)"}}first{{else}}not first{{/ifBool}} {{#ifBool @root/thing2 nothing thing1 "($0 && $1) && $2"}}second{{else}}not second{{/ifBool}}
 
 slice:{{#slice items limit="2" offset="2"}}{{this}}{{/slice}}:end
+increment:{{#each items}}{{#increment 1}}{{@index}}{{/increment}}{{/each}}:end
 
 {{encode "http://domain.com?q=this / that" mode='uri'}} {{encode "http://domain.com?q=this / that"}}
 {{#resize 200}}http://image.jpg{{/resize}}

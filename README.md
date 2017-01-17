@@ -136,7 +136,12 @@ Outputs contents if a complex boolean logic expression is satisfied. Uses string
 
 ### slice
 Loop through a subset of items
-- `{{#slice items limit="2" offset="4"}} some content {{/slice}}
+- `{{#slice items limit="2" offset="4"}} some content {{/slice}}`
+
+### increment
+Displays `@index` value added to given argument (e.g. an argument of `1` will display ordinal not cardinal numbers, i.e. values start from 1 not 0).
+- `{{#each array}}{{#increment 1}}{{@index}}{{/increment}}{{/each}}`
+
 
 ## Presenter helpers
 
