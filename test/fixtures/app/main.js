@@ -1,13 +1,14 @@
+/* eslint no-console: 0 */
 /*jshint node:true*/
 'use strict';
 
-var express = require('express');
-var handlebars = require('../../../express.js');
-var yell = require('./src/yell');
-var viewData = require('../view-data');
-var app = module.exports = express();
+const express = require('express');
+const handlebars = require('../../../express.js');
+const yell = require('./src/yell');
+const viewData = require('../view-data');
+const app = module.exports = express();
 
-var handlebarsPromise = handlebars(app, {
+const handlebarsPromise = handlebars(app, {
 	partialsDir: [
 		__dirname + '/views/partials'
 	],
@@ -15,16 +16,16 @@ var handlebarsPromise = handlebars(app, {
 	directory: __dirname
 });
 
-app.get('/templated', function(req, res) {
+app.get('/templated', function (req, res) {
 	res.render('main', viewData);
 });
 
-var actualAppListen = app.listen;
+const actualAppListen = app.listen;
 
-app.listen = function() {
-	var args = arguments;
+app.listen = function () {
+	const args = arguments;
 
-	return handlebarsPromise.then(function() {
+	return handlebarsPromise.then(function () {
 		actualAppListen.apply(app, args);
 	});
 };

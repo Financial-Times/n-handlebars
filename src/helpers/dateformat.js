@@ -1,8 +1,9 @@
+/* eslint no-console: 0 */
 'use strict';
 
 const dateFormat = require('dateformat');
 
-module.exports = function(format, options) {
+module.exports = function (format, options) {
 	try {
 		if (typeof format !== 'string') {
 			options = format;

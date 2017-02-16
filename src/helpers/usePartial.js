@@ -2,7 +2,7 @@
 const path = require('path');
 const handlebars = require('handlebars');
 
-module.exports = function(name, opts) {
+module.exports = function (name, opts) {
 	if(opts.hash.path){
 		name = path.join(opts.hash.path, name);
 	}

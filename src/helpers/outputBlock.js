@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(name, opts) {
+module.exports = function (name, opts) {
 	if (!this.blocks) {
 		this.blocks = {};
 	}

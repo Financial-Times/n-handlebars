@@ -1,5 +1,5 @@
 /*jshint node:true*/
-"use strict";
+'use strict';
 
 const Handlebars = require('handlebars');
 const extendHelpers = require('./src/extend-helpers');

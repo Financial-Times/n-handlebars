@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const Path = require('path');
 const expressHandlebars = require('express-handlebars');
@@ -32,12 +32,12 @@ const nextifyHandlebars = function (options) {
 
 	// look up templates on our own to avoid scanning thousands of files
 	return loadPartials(expressHandlebarsInstance, dependencyRoot, partialsDir, ignoreListInLinkedDeps, limitToComponents)
-	.then(function(partials) {
+	.then(function (partials) {
 		expressHandlebarsInstance.partialsDir = partials;
 
 		// makes the usePartial helper possible
 		return expressHandlebarsInstance.getPartials()
-		.then(function(partials) {
+		.then(function (partials) {
 			configuredHandlebars.partials = partials;
 
 			return expressHandlebarsInstance;

@@ -1,9 +1,10 @@
+/* eslint no-console: 0 */
 /*global it, describe*/
-"use strict";
+'use strict';
 
-var handlebars = require('../express');
-var expect = require('chai').expect;
-var yell = require('./fixtures/app/src/yell')
+const handlebars = require('../express');
+const expect = require('chai').expect;
+const yell = require('./fixtures/app/src/yell')
 
 describe('standalone', function () {
 	it('should render a template as a standalone instance', function (done) {

@@ -1,10 +1,10 @@
 'use strict';
 module.exports = {
-	title: "FT",
-	image: "https://avatars0.githubusercontent.com/u/3502508?v=3",
+	title: 'FT',
+	image: 'https://avatars0.githubusercontent.com/u/3502508?v=3',
 	date: new Date('Fri Aug 01 2014 00:00:00 GMT'),
-	text : "<p>Paragraph 1</p><p>Paragraph 2</p><p>Paragraph 3</p>",
-	entitiesText: "Something,&nbsp;something,&nbsp;something and something",
+	text : '<p>Paragraph 1</p><p>Paragraph 2</p><p>Paragraph 3</p>',
+	entitiesText: 'Something,&nbsp;something,&nbsp;something and something',
 	block1default: 'block1default',
 	block2default: 'block2default',
 	block2override: 'block2override',

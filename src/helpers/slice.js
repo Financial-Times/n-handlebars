@@ -1,7 +1,7 @@
 'use strict';
 
-module.exports = function(context, block) {
-	let ret = "";
+module.exports = function (context, block) {
+	let ret = '';
 	if (!context || !Array.isArray(context)) {
 		return ret;
 	}

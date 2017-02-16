@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function() {
+module.exports = function () {
 
 	const args = [].slice.call(arguments);
 	const opts = args.pop();
