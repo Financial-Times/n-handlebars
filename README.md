@@ -1,4 +1,4 @@
-# n-handlebars
+# n-handlebars [![CircleCI](https://circleci.com/gh/Financial-Times/n-handlebars.svg?style=svg)](https://circleci.com/gh/Financial-Times/n-handlebars)
 
 Enhanced handlebars for use in next applications
 
