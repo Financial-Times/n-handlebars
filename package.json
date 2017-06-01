@@ -4,7 +4,8 @@
   "main": "express.js",
   "scripts": {
     "test": "make test",
-    "release": "npm-prepublish --verbose && npm publish && git checkout package.json"
+    "release": "npm-prepublish --verbose && npm publish && git checkout package.json",
+    "commit": "commit-wizard"
   },
   "dependencies": {
     "@financial-times/n-concept": "^4.0.0",
@@ -15,6 +16,7 @@
     "handlebars": "^4.0.0"
   },
   "devDependencies": {
+    "@financial-times/n-gage": "^1.1.8",
     "chai": "^3.3.0",
     "eslint": "^3.2.2",
     "express": "^4.12.3",
@@ -26,5 +28,15 @@
   },
   "engines": {
     "node": ">=4.2.2"
+  },
+  "config": {
+    "pre-git": {
+      "commit-msg": "simple",
+      "pre-commit": [],
+      "pre-push": [],
+      "post-commit": [],
+      "post-checkout": [],
+      "post-merge": []
+    }
   }
 }
