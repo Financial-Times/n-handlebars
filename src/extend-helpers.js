@@ -9,6 +9,7 @@ module.exports = function (helpers) {
 	helpers.ifAll = require('./helpers/ifAll');
 	helpers.ifSome = require('./helpers/ifSome');
 	helpers.ifBool = require('./helpers/ifBool');
+	helpers.ifTypeof = require('./helpers/ifTypeof');
 	helpers.unlessAll = require('./helpers/unlessAll');
 	helpers.unlessEquals = require('./helpers/unlessEquals');
 	helpers.dateformat = require('./helpers/dateformat');

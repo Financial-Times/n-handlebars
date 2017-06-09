@@ -169,6 +169,12 @@ describe('express handlebars setup', function () {
 				.expect(200, /Start entities Something, something, something and something End Entities/, done);
 		});
 
+		it('should provide a helper for conditional rendering based on the type of an object', function (done) {
+			request(app)
+				.get('/templated')
+				.expect(200, /ifTypeof helper successful/, done);
+		});
+
 	});
 
 
