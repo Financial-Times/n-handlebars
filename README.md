@@ -131,6 +131,9 @@ Outputs contents if at least one of a number of things is truthy
 Outputs contents if a complex boolean logic expression is satisfied. Uses string formatting to generate the expression
 - `{{#ifBool thing1 thing2 "($0 && $1)"}} some content {{else}} some fallback content {{/ifBool}}`
 
+### ifTypeof
+Outputs contents if `typeof` operator on first argument equals the second argument
+- `{{#ifTypeof object "string"}} `object` is a string {{else}} `object` is not a string {{/ifTypeof}}`
 
 ## Iteration helpers
 

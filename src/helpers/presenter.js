@@ -17,4 +17,4 @@ module.exports = (presenterPath, context, options) => {
 		data[presenterName] = new Presenter(context);
 		return options.fn(context, {data});
 	}
-}
+};

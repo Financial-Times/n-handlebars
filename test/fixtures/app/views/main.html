@@ -56,3 +56,9 @@ increment:{{#each items}}{{#increment 1}}{{@index}}{{/increment}}{{/each}}:end
 <p>Start entities {{decodeHtmlEntities entitiesText}} End Entities</p>
 
 <div data-it="{{json obj}}"></div>
+
+{{#ifTypeof "a string" "string"}}
+	<p>ifTypeof helper successful<p>
+{{else}}
+	<p>ifTypeof helper unsuccessful<p>
+{{/ifTypeof}}

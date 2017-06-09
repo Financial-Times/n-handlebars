@@ -4,7 +4,7 @@
 
 const handlebars = require('../express');
 const expect = require('chai').expect;
-const yell = require('./fixtures/app/src/yell')
+const yell = require('./fixtures/app/src/yell');
 
 describe('standalone', function () {
 	it('should render a template as a standalone instance', function (done) {
@@ -21,8 +21,8 @@ describe('standalone', function () {
 					.then(function (html) {
 						expect(html).to.match(/<h1>FT[\s\S]*first not second[\s\S]*dynamic-partial[\s\S]*dynamicroot-iamroot/);
 						done();
-					})
+					});
 			})
-			.catch(console.log.bind(console))
-	})
+			.catch(console.log.bind(console));
+	});
 });

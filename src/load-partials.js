@@ -47,7 +47,7 @@ const classifyItems = function (items, otherPaths) {
 
 	links: items
 		.filter(function (it) { return it.stat.isSymbolicLink(); })
-		.map(function (it) { return it.path })
+		.map(function (it) { return it.path; })
 	});
 };
 
