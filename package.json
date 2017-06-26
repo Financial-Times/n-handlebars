@@ -16,7 +16,7 @@
     "handlebars": "^4.0.0"
   },
   "devDependencies": {
-    "@financial-times/n-gage": "^1.2.1",
+    "@financial-times/n-gage": "^1.7.1",
     "chai": "^3.3.0",
     "eslint": "^3.2.2",
     "express": "^4.12.3",
@@ -31,11 +31,10 @@
   },
   "config": {
     "pre-git": {
-      "pre-commit": [],
-      "pre-push": [],
-      "post-commit": [],
-      "post-checkout": [],
-      "post-merge": []
+      "pre-commit": [
+        "make verify",
+        "node_modules/.bin/secret-squirrel"
+      ]
     }
   }
 }
