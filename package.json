@@ -8,8 +8,8 @@
     "commit": "commit-wizard"
   },
   "dependencies": {
-    "@financial-times/n-concept": "^4.0.0",
-    "@financial-times/n-image": "^4.8.0",
+    "@financial-times/n-concept": "^7.0.0",
+    "@financial-times/n-image": "^5.0.0",
     "dateformat": "^1.0.11",
     "denodeify": "^1.2.1",
     "express-handlebars": "blendlabs/express-handlebars#master",
@@ -27,7 +27,7 @@
     "supertest": "^1.1.0"
   },
   "engines": {
-    "node": ">=4.2.2"
+    "node": "^6.11.0"
   },
   "config": {
     "pre-git": {
