@@ -27,7 +27,7 @@
     "supertest": "^1.1.0"
   },
   "engines": {
-    "node": ">=4.2.2"
+    "node": "^6.11.0"
   },
   "config": {
     "pre-git": {
