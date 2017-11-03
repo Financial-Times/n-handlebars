@@ -19,7 +19,7 @@ const nextifyHandlebars = function (options) {
 	const expressHandlebarsInstance = new expressHandlebars.create({ // eslint-disable-line
 		// use a handlebars instance we have direct access to so we can expose partials
 		handlebars: configuredHandlebars,
-		extname: '.html',
+		extname: options.extname || '.html',
 		helpers: helpers,
 		defaultLayout: options.defaultLayout || false,
 		layoutsDir: options.layoutsDir || undefined
