@@ -54,9 +54,9 @@ const applyToExpress = function (app, options) {
 		.then(function (expressHandlebarsInstance) {
 			app.set('views', options.directory + (options.viewsDirectory || '/views'));
 
-			app.engine('.html', expressHandlebarsInstance.engine);
+			app.engine((options.extname || '.html'), expressHandlebarsInstance.engine);
 
-			app.set('view engine', '.html');
+			app.set('view engine', (options.extname || '.html'));
 
 			return expressHandlebarsInstance;
 		});
