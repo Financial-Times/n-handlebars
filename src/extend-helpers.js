@@ -27,7 +27,7 @@ module.exports = function (helpers) {
 	helpers.debug = require('./helpers/debug');
 	helpers.array = require('./helpers/array');
 	helpers.nImagePresenter = require('@financial-times/n-image/src/handlebars-helpers/nImagePresenter');
-	helpers.concept = require('@financial-times/n-concept/handlebars-helpers/concept');
+	helpers.concept = require('@financial-times/n-topic-card/handlebars-helpers/concept');
 
 	return helpers;
 };
