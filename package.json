@@ -5,18 +5,21 @@
   "scripts": {
     "test": "make test",
     "release": "npm-prepublish --verbose && npm publish && git checkout package.json",
-    "commit": "commit-wizard"
+    "commit": "commit-wizard",
+    "precommit": "node_modules/.bin/secret-squirrel",
+    "commitmsg": "node_modules/.bin/secret-squirrel-commitmsg",
+    "prepush": "make verify -j3"
   },
   "dependencies": {
-    "@financial-times/n-concept": "^7.0.0",
     "@financial-times/n-image": "^5.0.0",
+    "@financial-times/n-topic-card": "^2.0.0",
     "dateformat": "^1.0.11",
     "denodeify": "^1.2.1",
     "express-handlebars": "blendlabs/express-handlebars#master",
     "handlebars": "^4.0.0"
   },
   "devDependencies": {
-    "@financial-times/n-gage": "^1.7.1",
+    "@financial-times/n-gage": "^1.19.4",
     "chai": "^3.3.0",
     "eslint": "^3.2.2",
     "express": "^4.12.3",
@@ -29,12 +32,5 @@
   "engines": {
     "node": "^6.11.0"
   },
-  "config": {
-    "pre-git": {
-      "pre-commit": [
-        "make verify",
-        "node_modules/.bin/secret-squirrel"
-      ]
-    }
-  }
+  "config": {}
 }
