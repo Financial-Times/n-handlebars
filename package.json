@@ -19,7 +19,7 @@
     "handlebars": "^4.0.0"
   },
   "devDependencies": {
-    "@financial-times/n-gage": "^1.19.4",
+    "@financial-times/n-gage": "^2.0.1",
     "chai": "^3.3.0",
     "eslint": "^3.2.2",
     "express": "^4.12.3",
@@ -30,7 +30,7 @@
     "supertest": "^1.1.0"
   },
   "engines": {
-    "node": "^6.11.0"
+    "node": "^8.9.0"
   },
   "config": {}
 }
