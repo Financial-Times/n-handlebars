@@ -6,6 +6,7 @@ module.exports = function (helpers) {
 	helpers.paragraphs = require('./helpers/paragraphs');
 	helpers.removeImageTags = require('./helpers/removeImageTags');
 	helpers.ifEquals = require('./helpers/ifEquals');
+	helpers.ifEqualsSome = require('./helpers/ifEqualsSome');
 	helpers.ifAll = require('./helpers/ifAll');
 	helpers.ifSome = require('./helpers/ifSome');
 	helpers.ifBool = require('./helpers/ifBool');

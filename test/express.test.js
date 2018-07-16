@@ -98,6 +98,12 @@ describe('express handlebars setup', function () {
 				.get('/templated')
 				.expect(200, /ifBool\:first not second/, done);
 		});
+
+		it('should provide an if equals some helper', function (done) {
+			request(app)
+				.get('/templated')
+				.expect(200, /ifEqualsSome\:first not second/, done);
+		});
 	});
 
 	describe('content helpers', function () {

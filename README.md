@@ -116,6 +116,10 @@ Decodes a (very limited) safe list* of HTML entities into their respective chara
 Outputs contents if a thing is equal to a value
 - `{{#ifEquals thing 'value'}} some content {{else}} some fallback content {{/ifEquals}}`
 
+### ifEqualsSome
+Outputs contents if a thing is equal to at least a value from all the values enumerated
+- `{{#ifEqualsSome thing 'value1' 'value2'}} some content {{else}} some fallback content {{/ifEqualsSome}}`
+
 ### unlessEquals
 Outputs contents if a thing is not exactly equal to a value
 - `{{#unlessEquals thing 'value'}} some content {{else}} some fallback content {{/unlessEquals}}`
