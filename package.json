@@ -15,7 +15,7 @@
     "@financial-times/n-topic-card": "^2.0.0",
     "dateformat": "^1.0.11",
     "denodeify": "^1.2.1",
-    "express-handlebars": "blendlabs/express-handlebars#master",
+    "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.0"
   },
   "devDependencies": {
