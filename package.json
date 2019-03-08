@@ -19,7 +19,7 @@
     "handlebars": "^4.0.0"
   },
   "devDependencies": {
-    "@financial-times/n-gage": "^1.19.14",
+    "@financial-times/n-gage": "3.4.0",
     "chai": "^3.3.0",
     "eslint": "^3.2.2",
     "express": "^4.12.3",
