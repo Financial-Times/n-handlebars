@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (input, options) {
+module.exports = function paragraphs (input, options) {
 
 	const text = input instanceof Array ? input.join('') : input;
 	const paras = text.split('</p>');

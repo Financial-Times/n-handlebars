@@ -3,7 +3,7 @@
 const path = require('path');
 const Handlebars = require('handlebars');
 
-module.exports = (presenterPath, context, options) => {
+module.exports = function presenter (presenterPath, context, options) {
 	const presenterName = path.basename(presenterPath).replace(/-([a-z])/g, g => g[1].toUpperCase());
 	let Presenter;
 	if (presenterPath.startsWith('.')) {

@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (object, type, options) {
+module.exports = function ifTypeof (object, type, options) {
 	if (typeof object === type) {
 		return options.fn(this);
 	}

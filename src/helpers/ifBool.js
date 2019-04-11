@@ -13,7 +13,7 @@ function compile (expression) {
 	return new Function('variables', `return !!(${expression.replace(/\$(\d)/g, ($0, $1) => `variables[${$1}]`)})`);
 }
 
-module.exports = function () {
+module.exports = function ifBool () {
 
 	const variables = [].slice.call(arguments);
 	const opts = variables.pop();

@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (str, opts) {
+module.exports = function encode (str, opts) {
 
 	// nice to add hml encoding eventually, but non-trivial to do (most js solutions online are either
 	// obviously incomplete or depend on the DOM. Will add when we need {{{}}} takes care of most (?all) needs)
