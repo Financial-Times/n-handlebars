@@ -2,7 +2,7 @@ function deprecate(helper) {
 	return function (...args) {
 		if (process.env.NODE_ENV !== 'production') {
 			// eslint-disable-next-line no-console
-			console.warn(`The Handlebars helper ${helper.name} has been deprecated.`);
+			console.warn(`The Handlebars helper ${helper.name} has been deprecated. Please talk to the Core UI team if you need to use it in your application templates. If you are not using this helper it may be used by a dependency, in which case you can ignore this warning.`);
 		}
 
 		return Reflect.apply(helper, this, args);
@@ -24,7 +24,7 @@ module.exports = function (helpers) {
 	helpers.unlessEquals = require('./helpers/unlessEquals');
 	helpers.dateformat = require('./helpers/dateformat');
 	helpers.resize = require('./helpers/resize');
-	helpers.encode = deprecate(require('./helpers/encode'));
+	helpers.encode = require('./helpers/encode');
 	helpers.decodeHtmlEntities = deprecate(require('./helpers/decodeHtmlEntities'));
 	helpers.defineBlock = require('./helpers/defineBlock');
 	helpers.outputBlock = require('./helpers/outputBlock');
