@@ -8,7 +8,8 @@
     "commit": "commit-wizard",
     "precommit": "node_modules/.bin/secret-squirrel",
     "commitmsg": "node_modules/.bin/secret-squirrel-commitmsg",
-    "prepush": "make verify -j3"
+    "prepush": "make verify -j3",
+    "prepare": "npx snyk protect || npx snyk protect -d || true"
   },
   "dependencies": {
     "@financial-times/n-image": "^5.0.0",
@@ -27,6 +28,7 @@
     "mocha": "^2.0.1",
     "npm-prepublish": "^1.2.1",
     "sinon": "^1.14.1",
+    "snyk": "^1.167.2",
     "supertest": "^1.1.0"
   },
   "engines": {
