@@ -39,7 +39,6 @@ module.exports = function (helpers) {
 	helpers.inline = deprecate(require('./helpers/inline'));
 	helpers.buildLink = deprecate(require('./helpers/buildLink'));
 	helpers.nImagePresenter = require('@financial-times/n-image/src/handlebars-helpers/nImagePresenter');
-	helpers.concept = require('@financial-times/n-topic-card/handlebars-helpers/concept');
 
 	return helpers;
 };
