@@ -1,5 +1,7 @@
 # n-handlebars [![CircleCI](https://circleci.com/gh/Financial-Times/n-handlebars.svg?style=svg)](https://circleci.com/gh/Financial-Times/n-handlebars)
 
+⚠️ This component is deprecated. Please use [Page Kit](https://github.com/Financial-Times/dotcom-page-kit/) or vanilla [Handlebars](https://www.npmjs.com/package/handlebars) to build new applications. ⚠️
+
 Enhanced handlebars for use in next applications
 
 ## Express applications
